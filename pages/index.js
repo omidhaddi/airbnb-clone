@@ -1,9 +1,11 @@
+import Link from "next/Link"
+import flats from "./flats"
 
 export default function Home(props) {
 
   return (
     <>
-      <h1>Empty Next App</h1>
+      <h1>Homepage</h1>
     </>
   )
 }

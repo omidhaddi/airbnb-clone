@@ -116,14 +116,30 @@
 }
 
 @media (prefers-color-scheme: dark) {
+
   .card,
   .footer {
     border-color: #222;
   }
+
   .code {
     background: #111;
   }
+
   .logo img {
     filter: invert(1);
   }
+}
+
+.headText {
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  letter-spacing: 5px;
+  margin: 10px;
+
+}
+
+.form {
+  padding: 0 2.5rem;
+  width: 50vw;
 }

@@ -6,9 +6,10 @@ const flat = props => {
     )
 }
 
-export default getServerSideProps(req,res){
+export async function getServerSideProps(req, res) {
+    console.log(res);
     const id = req.query.id
     return {
-        props:{id}
+        props: { id }
     }
 }

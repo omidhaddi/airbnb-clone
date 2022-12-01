@@ -4,8 +4,9 @@ const { Model, DataTypes} = require('sequelize')
 const initReview = (sequelize, DataTypes) => {
   class Review extends Model {    
     static associate(models) {
-      Review.belongsToMany(models.Reservation)
+      
       // define association here
+      Review.belongsTo(models.Reservation, { foreignKey: "room_id" })
     }
   }
   Review.init({

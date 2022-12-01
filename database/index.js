@@ -1,11 +1,16 @@
 import Sequelize from 'sequelize';
 import config from './config/config.mjs';
-import reservations from './models/reservations.js';
-import users from './models/users.js';
-import rooms from './models/rooms.js';
+import Room from './models/room.js';
+import User from "./models/user"
+import Reservation from "./models/reservation"
+import Review from "./models/review"
 
 const db = {};
-db.reservations  = reservations
+db.User = User;
+db.Room = Room
+db.Reservation = Reservation
+db.Review = Review
+
 
 let sequelize;
 if (process.env.NODE_ENV === 'production') {

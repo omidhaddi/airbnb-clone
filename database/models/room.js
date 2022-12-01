@@ -1,15 +1,15 @@
 'use strict';
-const { Model, DataTypes} = require('sequelize')
+const { Model, DataTypes } = require('sequelize')
 import connection from '../connection';
 
 const initRoom = (sequelize, DataTypes) => {
   class Room extends Model {
-    
+
     static associate(models) {
       // define association here
-      Room.belongsToMany(models.User),
-      Room.hasMany(models.Reservation)
-
+      Room.belongsTo(models.User, { foreignKey: "owner_id" })
+      Room.hasMany(models.Reservation ,{ foreignKey: "room_id" })
+      Room.hasMany(models.Review,{ foreignKey: "reservation_id" } )
     }
   }
   Room.init({

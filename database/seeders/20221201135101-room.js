@@ -5,7 +5,8 @@ module.exports = {
   async up (queryInterface, Sequelize) {
    
      await queryInterface.bulkInsert('Rooms', [{
-       room_type: 'Appartment',
+       room_type: 'Villa',
+       country: "South Africa",
        number_ofPersons: 4,
        total_bedrooms:2,
        total_bathrooms:1,

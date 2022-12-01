@@ -4,8 +4,8 @@ import db from '../database'
 const roomController = {
   all: async () => {
     const rooms = await db.Room.findAll()
-    const parsedRooms = JSON.parse(JSON.stringify(rooms))
-    return parsedRooms
+    const parsedRoom = JSON.parse(JSON.stringify(rooms))
+    return parsedRoom
   },
   find: async (id) => {
     const room = await db.Room.findByPk(id)

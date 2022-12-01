@@ -4,7 +4,7 @@ dotenv.config();
 
 const config = {
   "development": {
-    "username": "avinash",
+    "username": "omidhaddi",
     "password": "password",
     "database": "airbnb-clone",
     "host": "127.0.0.1",

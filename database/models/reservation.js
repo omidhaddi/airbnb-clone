@@ -15,7 +15,6 @@ const initReservation = (sequelize, DataTypes) => {
   Reservation.init({
     user_id: DataTypes.INTEGER,
     room_id: DataTypes.INTEGER,
-    price: DataTypes.INTEGER,
     start_date: DataTypes.DATE,
     end_date: DataTypes.DATE,
     total_price: DataTypes.INTEGER

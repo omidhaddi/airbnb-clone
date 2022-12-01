@@ -20,6 +20,7 @@ const initRoom = (sequelize, DataTypes) => {
     price: DataTypes.INTEGER,
     owner_id: DataTypes.INTEGER,
     imageUrl: DataTypes.STRING,
+    country: DataTypes.STRING,
     lon: DataTypes.INTEGER,
     lat: DataTypes.INTEGER,
   }, {

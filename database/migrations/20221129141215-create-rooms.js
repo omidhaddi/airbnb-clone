@@ -27,7 +27,13 @@ module.exports = {
       owner_id: {
         type: Sequelize.INTEGER
       },
-      published_at: {
+      imageUrl: {
+        type: Sequelize.STRING
+      },
+      lon: {
+        type: Sequelize.INTEGER
+      },
+      lat: {
         type: Sequelize.INTEGER
       },
       createdAt: {

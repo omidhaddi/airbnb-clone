@@ -1,5 +1,6 @@
-export default function Home() {
+/*export default function Reservation() {
   return (
+    <form action = "/api/reservation" method ="POST"> 
     <div className="flex flex-col md:px-12 px-0 relative bg-background font-raleway items-center min-h-screen">
       
       
@@ -7,31 +8,31 @@ export default function Home() {
         <div className="md:grid md:grid-cols-6 gap-1 flex flex-col">
           <div className="rounded-l-lg col-span-2  flex flex-col py-2 items-center bg-rose-200">
             <label
-              for="check-in"
+              forHtml="start_date"
               className="py-2 text-sm font-semibold uppercase"
             >
-              Check-in
+              Start date
             </label>
-            <input id="startDate" type="date" />
+            <input id="start_date" type="date" />
           </div>
           <div className="col-span-2 py-2 flex flex-col items-center bg-rose-200">
             <label
-              for="check-out"
+              forHtml="end_date"
               className="py-2 text-sm font-semibold uppercase"
             >
-              Check-out
+              End date
             </label>
-            <input id="check-out" type="date" />
+            <input id="end_date" type="date" />
           </div>
           <div className="col-span-1 py-2 flex flex-col items-center bg-rose-200 overflow-hidden">
             <label
-              for="guests"
+              forHtml="users"
               className="py-2 text-sm font-semibold uppercase"
             >
-              Guests
+             Guests
             </label>
             <input
-              id="guests"
+              id="users"
               type="number"
               placeholder="Total guests"
               className="text-center"
@@ -48,5 +49,33 @@ export default function Home() {
         </div>
       </div>
     </div>
+    </form>
   );
-}
+  }*/
+  import roomController from "../controllers/roomController"
+  const Reservation = props => {
+    const room = props.room
+    return (
+      <>
+      <h1>We are the {room.room_type}</h1>
+      <h3>Book your 🚀</h3>
+      <form action="/api/reservation" method="POST">
+        <input hidden name="room_id" value={room.room_id}/>
+        <label htmlFor="start_date">Start Date</label>
+        <input type='date' id="start_date" name="start_date" />
+        <label htmlFor="end_date">End Date</label>
+        <input type='date' id="end_date" name="end_date" />
+        <input type="submit" value="Reserve"/>
+      </form>
+      </>
+    )
+  }
+  export async function getServerSideProps(req, res) {
+    const room = await roomController.find(req.query.id)
+    return {
+      props: {room}
+    }
+  }
+  
+  
+export default Reservation

@@ -1,4 +1,4 @@
-import roomController from "../../../controllers/roomController";
+import roomController from "../../controllers/roomController";
 
 export default async function handler(req, res) {
   const { room_type, number_ofPersons, total_bedrooms, total_bathrooms, price, imageUrl, country, lon, lat} = req.body

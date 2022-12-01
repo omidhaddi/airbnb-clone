@@ -7,7 +7,7 @@ export default function Home(props) {
   return (
     <>
       <Navbar></Navbar>
-      <h1>Welcome to Airbnb Clone app</h1>
+      <h1></h1>
       <Card></Card>
       <Link href=""></Link>
     </>

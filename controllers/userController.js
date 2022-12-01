@@ -1,7 +1,8 @@
 import db from "../database"
+
 const userController = {
   all: async () => {
-    const users = await db.Users.findAll()
+    const users = await db.User.findAll()
     const parsedUsers = JSON.parse(JSON.stringify(users))
     return parsedUsers
   },

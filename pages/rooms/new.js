@@ -2,10 +2,10 @@
 import styles from '../../styles/Home.module.css'
 import "bootstrap/dist/css/bootstrap.css";
 import Navbar from '../../components/Navbar'
-// import { getSession } from 'next-auth/react'
-// import userController from '../../controllers/user'
+import { getSession } from 'next-auth/react'
+import userController from '../../controllers/user'
 import ImageUpload from '../../components/ImageUpload';
-// import db from '../../database'
+import roomController from '../../controllers/roomController';
 
 
 
@@ -15,7 +15,7 @@ export default function NewFlat(currentUser) {
             <Navbar currentUser={currentUser}></Navbar>
             <h1 className={styles.headText}>Add new Flat</h1>
             <div className={styles.form}>
-                <form action='/api/flats' method="POST">
+                <form action='/api/rooms' method="POST">
                     <label htmlFor="room_type" className="form-label">Flat Taype</label><br />
                     <input className="form-control form-control-sm" type="text" id="room_type" name="room_type" /><br />
                     <label htmlFor="numberof_persons" className="form-label">Number of Persons</label><br />
@@ -26,6 +26,8 @@ export default function NewFlat(currentUser) {
                     <input className="form-control form-control-sm" type="integer" id="total_bathrooms" name="total_bathrooms" /><br /><br />
                     <label htmlFor="price" className="form-label">Price</label><br />
                     <input className="form-control form-control-sm" type="integer" id="price" name="price" /><br /><br />
+                    <label htmlFor="address" className="form-label">Address</label><br />
+                    <input className="form-control form-control-sm" type="text" id="address" name="address" /><br /><br />
                     <ImageUpload></ImageUpload>
                     <input className="btn btn-primary btn-lg" type="submit" value="Submit" />
                 </form>
@@ -38,9 +40,8 @@ export default function NewFlat(currentUser) {
 //     const session = await getSession(req)
 //     let currentUser = null
 //     if (session) {
-//         // currentUser = await userController.findEmail(session.user.email)  // we have define findEmail in userController
-//         const currentUser = await db.User.findOne({ where: { email: User.email } })
-//         return JSON.parse(JSON.stringify(currentUser))
+//         currentUser = await userController.findEmail(session.user.email)  // we have define findEmail in userController
+     
 //     }
 //     if (currentUser) {
 //         return {

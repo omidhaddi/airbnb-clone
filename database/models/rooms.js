@@ -19,7 +19,9 @@ const initRoom = (sequelize, DataTypes) => {
     total_bathrooms: DataTypes.INTEGER,
     price: DataTypes.INTEGER,
     owner_id: DataTypes.INTEGER,
-    published_at: DataTypes.DATE
+    imageUrl: DataTypes.STRING,
+    lon: DataTypes.INTEGER,
+    lat: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Room',

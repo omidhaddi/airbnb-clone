@@ -2,19 +2,20 @@
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up (queryInterface, Sequelize) {
-    /**
-     * Add seed commands here.
-     *
-     * Example:
-     * await queryInterface.bulkInsert('People', [{
-     *   name: 'John Doe',
-     *   isBetaMember: false
-     * }], {});
-    */
+  async up(queryInterface, Sequelize) {
+    await queryInterface.bulkInsert('Users', [{
+      name: 'John Doe',
+      phoneNumber: 331245678,
+      email: "john.doe@gmail.com",
+      profile_picture: "",
+      password: "1234asdf",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }], {});
+
   },
 
-  async down (queryInterface, Sequelize) {
+  async down(queryInterface, Sequelize) {
     /**
      * Add commands to revert seed here.
      *
@@ -23,3 +24,6 @@ module.exports = {
      */
   }
 };
+
+
+

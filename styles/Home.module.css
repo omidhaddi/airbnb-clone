@@ -1,5 +1,11 @@
 .container {
-  padding: 0 2rem;
+  padding: 0 1rem;
+}
+.container2 {
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 16px;
 }
 
 .main {
@@ -116,7 +122,6 @@
 }
 
 @media (prefers-color-scheme: dark) {
-
   .card,
   .footer {
     border-color: #222;
@@ -133,13 +138,40 @@
 
 .headText {
   text-align: center;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   letter-spacing: 5px;
   margin: 10px;
-
 }
 
 .form {
   padding: 0 2.5rem;
   width: 50vw;
+}
+
+.roomDetils {
+  margin-top: 10px;
+  text-align: left;
+  padding: 0 1rem;
+}
+
+.images {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+/* .images1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+} */
+.images2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.images3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 20px;
 }

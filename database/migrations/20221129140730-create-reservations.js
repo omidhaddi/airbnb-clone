@@ -15,9 +15,6 @@ module.exports = {
       room_id: {
         type: Sequelize.INTEGER
       },
-      price: {
-        type: Sequelize.INTEGER
-      },
       start_date: {
         type: Sequelize.INTEGER
       },

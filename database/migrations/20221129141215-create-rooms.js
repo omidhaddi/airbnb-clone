@@ -30,6 +30,9 @@ module.exports = {
       imageUrl: {
         type: Sequelize.STRING
       },
+      country: {
+        type: Sequelize.STRING
+      },
       lon: {
         type: Sequelize.INTEGER
       },
@@ -38,11 +41,11 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATEONLY
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATEONLY
       }
     });
   },

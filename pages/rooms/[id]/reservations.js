@@ -11,7 +11,7 @@ const Reservations = props => {
         <>
             <Navbar></Navbar>
             {<ol className={styles.list}>
-                {props.reservations.map(reservation => <li key={reservation.id}>User Name : {props.user.name} | Start Date: {reservation.start_date} | End Date: {reservation.end_date}</li>)}
+                {props.reservations.map(reservation => <li key={reservation.id}> | Start Date: {reservation.start_date} | End Date: {reservation.end_date}</li>)}
             </ol>}
         </>
     )

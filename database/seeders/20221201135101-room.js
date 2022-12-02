@@ -10,7 +10,7 @@ module.exports = {
        number_ofPersons: 4,
        total_bedrooms:2,
        total_bathrooms:1,
-       price:50,
+       price:500,
        imageUrl: "https://res.cloudinary.com/dgxasrrac/image/upload/v1669903060/unsigned-uploads/dfe9fd1e-a010-43c9-b546-0bbc7d59f7f3_ij1dq8.webp",
        lon:40,
        lat:-52,

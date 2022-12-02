@@ -16,21 +16,21 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       start_date: {
-        type: Sequelize.INTEGER
+        type: Sequelize.DATEONLY
       },
       end_date: {
-        type: Sequelize.INTEGER
+        type: Sequelize.DATEONLY
       },
       total_price: {
         type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATEONLY
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATEONLY
       }
     });
   },

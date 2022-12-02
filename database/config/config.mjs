@@ -4,8 +4,8 @@ dotenv.config();
 
 const config = {
   "development": {
-    "username": "omidhaddi",
-    "password": "password",
+    username: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
     "database": "airbnb-clone",
     "host": "127.0.0.1",
     "dialect": "postgres"

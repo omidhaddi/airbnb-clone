@@ -1,12 +1,10 @@
 //we can add booking here 
-import styles from '../../styles/Home.module.css'
-import roomsController from "../../controllers/roomController"
-import Navbar from "../../components/Navbar"
+import styles from '../../../styles/Home.module.css'
+import roomController from "../../../controllers/roomController"
+import Navbar from "../../../components/Navbar"
 import Image from 'next/image'
 import "bootstrap/dist/css/bootstrap.css";
-import Reservation from '../../components/Reservation';
-
-
+import Reservation from '../../../components/Reservation';
 
 
 export default function Home({ room }) {
@@ -16,7 +14,7 @@ export default function Home({ room }) {
             <Navbar></Navbar>
             <h1>{room.room_type}</h1>
             <div className={styles.images}>
-                <Image src={room.imageUrl} alt="flats" width={600} height={350} />
+                <Image src={room.imageUrl} alt="flats" width={700} height={350} />
                 <div className={styles.images2}>
                     <div className={styles.images3}>
                         <Image src={room.imageUrl} alt="flats" width={280} height={100} />
@@ -38,7 +36,7 @@ export default function Home({ room }) {
                 <h5>Published at {room.createdAt}</h5>
             </div>
 
-            <Reservation></Reservation>
+            <Reservation room_id={room.id} ></Reservation>
 
         </>
     )
@@ -46,7 +44,7 @@ export default function Home({ room }) {
 export async function getServerSideProps(req, res) {
     console.log(res);
     const id = req.query.id
-    const room = await roomsController.find(id)
+    const room = await roomController.find(id)
     return {
         // return the cocktail to the component
         props: { room },

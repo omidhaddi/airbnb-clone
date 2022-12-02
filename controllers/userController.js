@@ -7,7 +7,17 @@ const userController = {
     return parsedUsers
   },
   find: async (id) => {
-    return await db.Users.findByPk(id)
+    const user = await db.User.findByPk(id)
+    return JSON.parse(JSON.stringify(user))
+  },
+  authorize: async ({ username, password }) => {
+    const user = await db.User.findOne({ where: { [Op.and]: [{ email: username }, { password: password }] } })
+    return user
+  },
+  findEmail: async (email) => {
+    const user = await db.User.findOne({ where: { email: email } })
+    return JSON.parse(JSON.stringify(user))
+
   }
 }
 

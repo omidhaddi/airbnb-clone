@@ -5,7 +5,6 @@ import Navbar from '../../components/Navbar'
 // import { getSession } from 'next-auth/react'
 // import userController from '../../controllers/user'
 import ImageUpload from '../../components/ImageUpload';
-// import roomController from '../../controllers/roomController';
 
 
 
@@ -30,7 +29,7 @@ export default function NewFlat() {
                     <input className="form-control form-control-sm" type="text" id="address" name="address" />
                     <label htmlFor="country" className="form-label">Country</label>
                     <input className="form-control form-control-sm" type="text" id="country" name="country" />
-                    
+
                     <ImageUpload></ImageUpload>
                     <input className="btn btn-primary btn-lg" type="submit" value="Submit" />
                 </form>
@@ -43,8 +42,8 @@ export default function NewFlat() {
 //     const session = await getSession(req)
 //     let currentUser = null
 //     if (session) {
-//         currentUser = await userController.findEmail(session.user.email)  // we have define findEmail in userController
-     
+//         currentUser = await userController.findEmail(session.user.email)
+
 //     }
 //     if (currentUser) {
 //         return {
@@ -54,7 +53,7 @@ export default function NewFlat() {
 //         return {
 //             redirect: {
 //                 permanent: false,
-//                 destination: `/flats`
+//                 destination: `/`
 //             }
 //         }
 //     }

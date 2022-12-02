@@ -28,8 +28,8 @@ export default function ImageUpload() {
       <input
         type="file"
         className="form-control"
-        id="image"
-        name="image"
+        id="imageUrl"
+        name="imageUrl"
         onChange={handleChange}
       ></input>
       <input

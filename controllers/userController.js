@@ -7,7 +7,7 @@ const userController = {
     return parsedUsers
   },
   find: async (id) => {
-    return await db.Users.findByPk(id)
+    return await db.User.findByPk(id)
   }
 }
 

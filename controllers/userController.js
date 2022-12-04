@@ -1,4 +1,5 @@
 import db from "../database"
+import { Op } from "sequelize"
 
 const userController = {
   all: async () => {
@@ -12,17 +13,17 @@ const userController = {
   },
   authorize: async ({ username, password }) => {
     const user = await db.User.findOne({ where: { [Op.and]: [{ email: username }, { password: password }] } })
-    return user
+    return JSON.parse(JSON.stringify(user))
   },
   findEmail: async (email) => {
-    const user = await db.User.findOne({ where: { email: email } })
+    const [user, created] = await db.User.findOrCreate({ where: { email: email } })
+    console.log(created);
     return JSON.parse(JSON.stringify(user))
 
   }
 }
 
 export default userController
-
 
 
 

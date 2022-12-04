@@ -5,12 +5,16 @@ import Navbar from "../../../components/Navbar"
 import Image from 'next/image'
 import "bootstrap/dist/css/bootstrap.css";
 import Reservation from '../../../components/Reservation';
+import Head from 'next/head';
 
 
 export default function Home({ room }) {
 
   return (
     <>
+    <Head>
+                <title>flat-details-Airbnb-clonee</title>
+            </Head>
       <Navbar></Navbar>
       <h1>{room.room_type}</h1>
       <div className={styles.images}>

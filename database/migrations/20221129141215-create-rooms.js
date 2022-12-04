@@ -27,10 +27,10 @@ module.exports = {
       owner_id: {
         type: Sequelize.INTEGER
       },
-      imageUrl: {
+      country: {
         type: Sequelize.STRING
       },
-      country: {
+      imageUrl: {
         type: Sequelize.STRING
       },
       lon: {

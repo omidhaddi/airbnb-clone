@@ -21,6 +21,7 @@ const roomController = {
     const room = await db.Room.create(data)
     return JSON.parse(JSON.stringify(room))
   }
+
 }
 
 export default roomController

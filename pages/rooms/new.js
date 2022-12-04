@@ -1,17 +1,19 @@
-// for add new flats
+import Navbar from '../../components/Navbar'
+import { getSession } from 'next-auth/react'
+import userController from '../../controllers/userController'
+import ImageUpload from '../../components/ImageUpload';
 import styles from '../../styles/Home.module.css'
 import "bootstrap/dist/css/bootstrap.css";
-import Navbar from '../../components/Navbar'
-// import { getSession } from 'next-auth/react'
-// import userController from '../../controllers/user'
-import ImageUpload from '../../components/ImageUpload';
-// import roomController from '../../controllers/roomController';
-
+import Head from 'next/head';
 
 
 export default function NewFlat() {
+
     return (
         <>
+            <Head>
+                <title>Add-new-flat-Airbnb-clonee</title>
+            </Head>
             <Navbar></Navbar>
             <h1 className={styles.headText}>Add new Flat</h1>
             <div className={styles.form}>
@@ -30,32 +32,33 @@ export default function NewFlat() {
                     <input className="form-control form-control-sm" type="text" id="address" name="address" />
                     <label htmlFor="country" className="form-label">Country</label>
                     <input className="form-control form-control-sm" type="text" id="country" name="country" />
-                    
+                    <br />
                     <ImageUpload></ImageUpload>
                     <input className="btn btn-primary btn-lg" type="submit" value="Submit" />
                 </form>
             </div>
 
+
         </>
     )
 }
-// export async function getServerSideProps(req, res) {
-//     const session = await getSession(req)
-//     let currentUser = null
-//     if (session) {
-//         currentUser = await userController.findEmail(session.user.email)  // we have define findEmail in userController
-     
-//     }
-//     if (currentUser) {
-//         return {
-//             props: { currentUser },
-//         }
-//     } else {
-//         return {
-//             redirect: {
-//                 permanent: false,
-//                 destination: `/flats`
-//             }
-//         }
-//     }
-// }
+export async function getServerSideProps(req, res) {
+    const session = await getSession(req)
+    let currentUser = null
+    if (session) {
+        currentUser = await userController.findEmail(session.user.email)
+
+    }
+    if (currentUser) {
+        return {
+            props: { currentUser },
+        }
+    } else {
+        return {
+            redirect: {
+                permanent: false,
+                destination: `/rooms/permessin`
+            }
+        }
+    }
+}

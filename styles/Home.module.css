@@ -1,3 +1,6 @@
+.avatar {
+  border-radius: 50%;
+}
 .container {
   padding: 0 1rem;
 }
@@ -141,6 +144,7 @@
   font-family: Georgia, "Times New Roman", Times, serif;
   letter-spacing: 5px;
   margin: 10px;
+  font-size: 50px;
 }
 
 .form {
@@ -159,11 +163,6 @@
   flex-direction: row;
   justify-content: space-between;
 }
-/* .images1 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-} */
 .images2 {
   display: flex;
   flex-direction: row;
@@ -174,4 +173,22 @@
   flex-direction: column;
   justify-content: space-between;
   margin-right: 20px;
+}
+
+.list {
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  letter-spacing: 5px;
+  margin: 10px;
+  margin-top: 25px;
+  color: #df53b1;
+}
+.profilePic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.link {
+  display:flex;
+  align-items: center;
 }

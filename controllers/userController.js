@@ -1,5 +1,5 @@
 import db from "../database"
-import { Op } from "sequelize"
+// import { Op } from "sequelize"
 
 const userController = {
   all: async () => {
@@ -8,14 +8,7 @@ const userController = {
     return parsedUsers
   },
   find: async (id) => {
-<<<<<<< HEAD
-    return await db.User.findByPk(id)
-=======
     const user = await db.User.findByPk(id)
-    return JSON.parse(JSON.stringify(user))
-  },
-  authorize: async ({ username, password }) => {
-    const user = await db.User.findOne({ where: { [Op.and]: [{ email: username }, { password: password }] } })
     return JSON.parse(JSON.stringify(user))
   },
   findEmail: async (email) => {
@@ -23,7 +16,7 @@ const userController = {
     console.log(created);
     return JSON.parse(JSON.stringify(user))
 
->>>>>>> 927eaa87234fb2343897d5433d368358b8bed710
+
   }
 }
 
